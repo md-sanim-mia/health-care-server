@@ -14,6 +14,7 @@ const createAdminforDb = async (paylood: any) => {
       email: paylood?.admin?.email,
     },
   });
+  console.log(isUserExist);
 
   if (isUserExist) {
     throw new Error("user already exist in databes");
@@ -37,7 +38,12 @@ const createAdminforDb = async (paylood: any) => {
   });
   return result;
 };
+const getAllUserForDb = async () => {
+  const result = await prisma.user.findMany({});
+  return result;
+};
 
 export const userServices = {
   createAdminforDb,
+  getAllUserForDb,
 };

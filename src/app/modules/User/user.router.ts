@@ -3,5 +3,6 @@ import { useContllors } from "./user.contllor";
 const route = express.Router();
 
 route.post("/", useContllors.createUser);
+route.get("/", useContllors.getAllUser);
 
 export const userRouters = route;
