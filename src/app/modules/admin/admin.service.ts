@@ -45,7 +45,7 @@ const getAllAdminForDb = async (paylood: any, options: any) => {
   });
   const totallPage = await prisma.admin.count({ where: whereCondition });
   return {
-    metaData: { page, limit, totallPage },
+    meta: { page, limit, totallPage },
     data: result,
   };
 };
